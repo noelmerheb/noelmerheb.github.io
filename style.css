@@ -566,4 +566,9 @@ footer a:hover { color: var(--accent); }
   .tabbar .brand span.full { display: none; }
   .btn-row { width: 100%; }
   .btn-row .btn { flex: 1; justify-content: center; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 22px; }
+  .form-card .terminal-bar { margin: -22px -22px 20px; }
+  .terminal-body { padding: 18px; font-size: 0.82rem; }
+  .hero { padding-top: 36px; }
 }

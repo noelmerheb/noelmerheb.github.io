@@ -12,7 +12,7 @@ const DEFAULT_DATA = {
   "name": "Noel Merheb",
   "title": "Web Developer",
   "location": "Lebanon",
-  "heroIntro": "Junior developer building with HTML, CSS, JavaScript, PHP and MySQL. I like turning ideas into working, well-structured apps — and I'm actively looking for an internship or entry-level role where I can keep learning.",
+  "heroIntro": "Junior developer building with HTML, CSS, JavaScript, PHP and MySQL. I like turning ideas into working, well-structured apps — and I'm actively looking for opportunities in computer science and software development where I can keep learning.",
   "aboutText": "I'm a motivated junior developer based in Lebanon, interested in both frontend and backend development. I build small full-stack projects with PHP and MySQL, run them locally with XAMPP, and host the finished versions on InfinityFree. I use Git and GitHub for version control on everything I build, and I'm continuously learning — right now that means going deeper into clean code structure, APIs, and better UI design.",
   "email": "noelmerheb2@gmail.com",
   "github": "https://github.com/noelmerheb",
@@ -252,7 +252,7 @@ function typeTerminal() {
     { type: "cmd", text: "stack --list" },
     { type: "out", text: "HTML · CSS · JavaScript · PHP · MySQL · Git" },
     { type: "cmd", text: "status" },
-    { type: "out", text: "Open to internships &amp; entry-level roles" }
+    { type: "out", text: "Open to computer science &amp; software development roles" }
   ];
 
   body.innerHTML = "";
