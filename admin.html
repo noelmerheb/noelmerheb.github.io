@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Portfolio Content Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ================= LOGIN SCREEN ================= -->
+<div class="login-wrap" id="loginScreen">
+  <div class="login-card">
+    <div class="terminal-bar">
+      <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+      <span class="tname">login.sh</span>
+    </div>
+    <div class="login-card-body">
+      <h1>Admin access</h1>
+      <p class="sub">// authenticate to edit portfolio content</p>
+      <form id="loginForm">
+        <div class="field-admin">
+          <label for="username">username</label>
+          <input type="text" id="username" autocomplete="username" required>
+        </div>
+        <div class="field-admin">
+          <label for="password">password</label>
+          <input type="password" id="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+        <p class="login-error" id="loginError"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="dashboard" style="display:none; flex-direction:column; min-height:100vh;">
+
+  <div class="admin-topbar">
+    <div class="brand"><span class="dot"></span>portfolio-admin</div>
+    <div class="spacer"></div>
+    <a href="index.html" target="_blank" class="btn btn-ghost btn-small">View Site ↗</a>
+    <button class="btn btn-ghost btn-small" id="logoutBtn">Log Out</button>
+  </div>
+
+  <div class="admin-shell">
+    <nav class="admin-nav">
+      <button class="admin-nav-btn active" data-panel="panel-text">✎ Site Text</button>
+      <button class="admin-nav-btn" data-panel="panel-skills">▤ Skills</button>
+      <button class="admin-nav-btn" data-panel="panel-projects">▣ Projects</button>
+      <button class="admin-nav-btn" data-panel="panel-danger">⚠ Reset Data</button>
+    </nav>
+
+    <main class="admin-main">
+
+      <!-- ---------- SITE TEXT ---------- -->
+      <section class="admin-panel active" id="panel-text">
+        <div class="panel-head">
+          <div>
+            <h2>Site text</h2>
+            <p>Edit the name, title, and written sections shown on the site.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="grid-2">
+            <div class="field-admin">
+              <label for="f-name">Full name</label>
+              <input type="text" id="f-name">
+            </div>
+            <div class="field-admin">
+              <label for="f-title">Title</label>
+              <input type="text" id="f-title">
+            </div>
+          </div>
+          <div class="field-admin">
+            <label for="f-location">Location</label>
+            <input type="text" id="f-location">
+          </div>
+          <div class="field-admin">
+            <label for="f-heroIntro">Hero intro</label>
+            <textarea id="f-heroIntro"></textarea>
+            <p class="hint">Shown under your title on the homepage.</p>
+          </div>
+          <div class="field-admin">
+            <label for="f-aboutText">About section text</label>
+            <textarea id="f-aboutText" style="min-height:130px;"></textarea>
+          </div>
+          <div class="grid-2">
+            <div class="field-admin">
+              <label for="f-email">Contact email</label>
+              <input type="email" id="f-email">
+            </div>
+            <div class="field-admin">
+              <label for="f-github">GitHub URL</label>
+              <input type="url" id="f-github">
+            </div>
+          </div>
+          <div class="field-admin">
+            <label for="f-linkedin">LinkedIn URL</label>
+            <input type="url" id="f-linkedin">
+          </div>
+          <div class="save-row">
+            <button class="btn btn-primary" id="saveTextBtn">Save Changes</button>
+            <span class="save-msg" id="saveTextMsg">✓ Saved</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SKILLS ---------- -->
+      <section class="admin-panel" id="panel-skills">
+        <div class="panel-head">
+          <div>
+            <h2>Skills</h2>
+            <p>Shown as progress cards on the homepage.</p>
+          </div>
+          <button class="btn btn-primary btn-small" id="addSkillBtn">+ Add Skill</button>
+        </div>
+        <div id="skillsList"></div>
+      </section>
+
+      <!-- ---------- PROJECTS ---------- -->
+      <section class="admin-panel" id="panel-projects">
+        <div class="panel-head">
+          <div>
+            <h2>Projects</h2>
+            <p>Each project shows a View Code and Live Demo button.</p>
+          </div>
+          <button class="btn btn-primary btn-small" id="addProjectBtn">+ Add Project</button>
+        </div>
+        <div id="projectsList"></div>
+      </section>
+
+      <!-- ---------- RESET ---------- -->
+      <section class="admin-panel" id="panel-danger">
+        <div class="panel-head">
+          <div>
+            <h2>Reset data</h2>
+            <p>Restore the site to its original default content.</p>
+          </div>
+        </div>
+        <div class="admin-card">
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">
+            This clears everything you've edited — name, about text, skills, and projects — and restores the
+            original placeholder content. This can't be undone.
+          </p>
+          <button class="btn btn-danger" id="resetBtn">Reset to Defaults</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ================= SKILL MODAL ================= -->
+<div class="modal-overlay" id="skillModal">
+  <div class="modal-box">
+    <div class="terminal-bar">
+      <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+      <span class="tname" id="skillModalTitle">skill.json</span>
+    </div>
+    <div class="modal-body-inner">
+      <h3 id="skillModalHeading">Add skill</h3>
+      <input type="hidden" id="skillIndex">
+      <div class="field-admin">
+        <label for="skillName">Name</label>
+        <input type="text" id="skillName" placeholder="e.g. JavaScript">
+      </div>
+      <div class="field-admin">
+        <label for="skillTag">Tag / category</label>
+        <input type="text" id="skillTag" placeholder="e.g. frontend logic">
+      </div>
+      <div class="field-admin">
+        <label for="skillLevel">Proficiency</label>
+        <div class="range-row">
+          <input type="range" id="skillLevel" min="0" max="100" value="70">
+          <span class="range-val" id="skillLevelVal">70%</span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="skillCancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="skillSaveBtn">Save Skill</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PROJECT MODAL ================= -->
+<div class="modal-overlay" id="projectModal">
+  <div class="modal-box">
+    <div class="terminal-bar">
+      <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+      <span class="tname" id="projectModalTitle">project.json</span>
+    </div>
+    <div class="modal-body-inner">
+      <h3 id="projectModalHeading">Add project</h3>
+      <input type="hidden" id="projectIndex">
+      <div class="field-admin">
+        <label for="projectTitle">Project name</label>
+        <input type="text" id="projectTitle" placeholder="e.g. Student Management System">
+      </div>
+      <div class="field-admin">
+        <label for="projectDescription">Description</label>
+        <textarea id="projectDescription" placeholder="What does it do, what did you build?"></textarea>
+      </div>
+      <div class="field-admin">
+        <label for="projectTech">Technologies (comma-separated)</label>
+        <input type="text" id="projectTech" placeholder="PHP, MySQL, HTML, CSS">
+      </div>
+      <div class="field-admin">
+        <label for="projectGithub">GitHub link</label>
+        <input type="url" id="projectGithub" placeholder="https://github.com/username/repo">
+      </div>
+      <div class="field-admin">
+        <label for="projectDemo">Live demo link (InfinityFree or other host)</label>
+        <input type="url" id="projectDemo" placeholder="https://yourproject.infinityfreeapp.com">
+        <p class="hint">Leave blank if there's no live demo yet — the button will be disabled.</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="projectCancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="projectSaveBtn">Save Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

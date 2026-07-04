@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noel Merheb — Web Developer</title>
+<meta name="description" content="Portfolio of Noel Merheb, a junior web developer from Lebanon working with HTML, CSS, JavaScript, PHP and MySQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="tabbar-wrap">
+  <nav class="tabbar" id="tabbar">
+    <div class="brand"><span class="dot"></span><span class="full">portfolio</span>~</div>
+    <a class="tab active" data-target="home" href="#home"><span class="file-dot"></span>index.html</a>
+    <a class="tab" data-target="about" href="#about"><span class="file-dot"></span>about.js</a>
+    <a class="tab" data-target="skills" href="#skills"><span class="file-dot"></span>skills.css</a>
+    <a class="tab" data-target="projects" href="#projects"><span class="file-dot"></span>projects.php</a>
+    <a class="tab" data-target="contact" href="#contact"><span class="file-dot"></span>contact.md</a>
+    <a class="cta-mini" href="#contact">Hire me</a>
+  </nav>
+</div>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero container">
+  <div class="hero-copy">
+    <div class="kicker"><span class="pulse"></span>AVAILABLE FOR &amp; ROLES IN THE CS INDUSTRY</div>
+    <h1><span data-field="name">Noel Merheb</span></h1>
+    <p class="role"><span data-field="title">Web Developer</span><span class="cursor"></span></p>
+    <p class="intro" data-field="heroIntro">Loading...</p>
+    <div class="btn-row">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+    </div>
+  </div>
+
+  <div class="terminal reveal in">
+    <div class="terminal-bar">
+      <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+      <span class="tname">bash — ~/portfolio</span>
+    </div>
+    <div class="terminal-body" id="terminalBody"></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="container">
+    <div class="eyebrow">about.js</div>
+    <h2 class="section-title">A bit about me</h2>
+    <p class="section-sub">Where I'm at right now, and what I'm working toward.</p>
+
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <p data-field="aboutText">Loading...</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact reveal"><span class="k">FOCUS</span><span class="v">Frontend &amp; backend development</span></div>
+        <div class="fact reveal"><span class="k">BACKEND</span><span class="v">PHP + MySQL, built and tested with XAMPP</span></div>
+        <div class="fact reveal"><span class="k">HOSTING</span><span class="v">InfinityFree for live demos</span></div>
+        <div class="fact reveal"><span class="k">WORKFLOW</span><span class="v">Git &amp; GitHub for version control</span></div>
+        <div class="fact reveal"><span class="k">STATUS</span><span class="v">Continuously learning, open to opportunities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="container">
+    <div class="eyebrow">skills.css</div>
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">The tools and languages I use to build projects, end to end.</p>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="container">
+    <div class="eyebrow">projects.php</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">A few things I've built — code on GitHub, live demos hosted on InfinityFree where available.</p>
+    <div class="projects-grid" id="projectsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container">
+    <div class="eyebrow">contact.md</div>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="section-sub">Looking for an intern or a junior developer? I'd love to hear from you.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a class="contact-link" data-field="email" href="#"><span class="ico">@</span><span data-field="email">email</span></a>
+        <a class="contact-link" data-field="github" href="#" target="_blank" rel="noopener"><span class="ico">&lt;/&gt;</span>GitHub</a>
+        <a class="contact-link" data-field="linkedin" href="#" target="_blank" rel="noopener"><span class="ico">in</span>LinkedIn</a>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="terminal-bar">
+          <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+          <span class="tname">send-message.sh</span>
+        </div>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="message">message</label>
+            <textarea id="message" name="message" placeholder="Tell me about the role..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    &copy; <span id="year"></span> <span data-field="name">Noel Merheb</span> — built with HTML, CSS &amp; JavaScript. ·
+    <a href="admin.html">Admin</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
