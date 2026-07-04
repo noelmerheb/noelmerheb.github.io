@@ -9,49 +9,124 @@
 const STORAGE_KEY = "portfolioData";
 
 const DEFAULT_DATA = {
-  name: "Noel Merheb",
-  title: "Web Developer",
-  location: "Lebanon",
-  heroIntro:
-    "Junior developer building with HTML, CSS, JavaScript, PHP and MySQL. I like turning ideas into working, well-structured apps — and I'm actively looking for ROLES IN THE CS INDUSTRY where I can keep learning.",
-  aboutText:
-    "I'm a motivated junior developer based in Lebanon, interested in both frontend and backend development. I build small full-stack projects with PHP and MySQL, run them locally with XAMPP, and host the finished versions on InfinityFree. I use Git and GitHub for version control on everything I build, and I'm continuously learning — right now that means going deeper into clean code structure, APIs, and better UI design.",
-  email: "noelmerheb@example.com",
-  github: "https://github.com/your-username",
-  linkedin: "https://linkedin.com/in/your-username",
-  skills: [
-    { name: "HTML", level: 90, tag: "markup" },
-    { name: "CSS", level: 85, tag: "styling" },
-    { name: "JavaScript", level: 75, tag: "frontend logic" },
-    { name: "PHP", level: 70, tag: "backend" },
-    { name: "MySQL", level: 68, tag: "database" },
-    { name: "Git & GitHub", level: 80, tag: "version control" },
-    { name: "XAMPP / Local Dev", level: 75, tag: "environment" }
+  "name": "Noel Merheb",
+  "title": "Web Developer",
+  "location": "Lebanon",
+  "heroIntro": "Junior developer building with HTML, CSS, JavaScript, PHP and MySQL. I like turning ideas into working, well-structured apps — and I'm actively looking for an internship or entry-level role where I can keep learning.",
+  "aboutText": "I'm a motivated junior developer based in Lebanon, interested in both frontend and backend development. I build small full-stack projects with PHP and MySQL, run them locally with XAMPP, and host the finished versions on InfinityFree. I use Git and GitHub for version control on everything I build, and I'm continuously learning — right now that means going deeper into clean code structure, APIs, and better UI design.",
+  "email": "noelmerheb2@gmail.com",
+  "github": "https://github.com/noelmerheb",
+  "linkedin": "https://www.linkedin.com/in/noel-merheb-516982223?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  "skills": [
+    {
+      "name": "HTML",
+      "level": 90,
+      "tag": "markup"
+    },
+    {
+      "name": "CSS",
+      "level": 85,
+      "tag": "styling"
+    },
+    {
+      "name": "JavaScript",
+      "level": 75,
+      "tag": "frontend logic"
+    },
+    {
+      "name": "PHP",
+      "level": 70,
+      "tag": "backend"
+    },
+    {
+      "name": "MySQL",
+      "level": 68,
+      "tag": "database"
+    },
+    {
+      "name": "Git & GitHub",
+      "level": 80,
+      "tag": "version control"
+    },
+    {
+      "name": "XAMPP / Local Dev",
+      "level": 75,
+      "tag": "environment"
+    }
   ],
-  projects: [
+  "projects": [
     {
-      title: "Student Management System",
-      description:
-        "A CRUD web app for managing student records — add, edit, search and delete students from a MySQL database, built and tested locally with XAMPP.",
-      tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-      github: "https://github.com/your-username/student-management-system",
-      demo: "https://yourproject.infinityfreeapp.com"
+      "title": "Electricity Billing Management System",
+      "description": "A CRUD application for electricity billing that allows creating, reading, updating, and deleting customer records, bills, and payment data.",
+      "tech": [
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "github": "https://github.com/noelmerheb/Electricity-Billing-Management-System",
+      "demo": ""
     },
     {
-      title: "Personal Blog Platform",
-      description:
-        "A small blog engine with a login system, post creation, and an admin area to publish and delete posts. PHP handles the backend logic and sessions; MySQL stores users and posts.",
-      tech: ["PHP", "MySQL", "Sessions", "HTML", "CSS"],
-      github: "https://github.com/your-username/personal-blog-platform",
-      demo: "https://yourblog.infinityfreeapp.com"
+      "title": "MovieBuzz",
+      "description": "A web application for managing a movie database with full CRUD functionality (create, read, update, delete).",
+      "tech": [
+        "PHP",
+        "MySQL",
+        "Sessions",
+        "HTML",
+        "CSS"
+      ],
+      "github": "https://github.com/noelmerheb/MovieBuzz",
+      "demo": ""
     },
     {
-      title: "Developer Portfolio (this site)",
-      description:
-        "This portfolio itself — a responsive, single-page site built with vanilla HTML, CSS and JavaScript, with a custom admin panel for editing content without touching code.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/your-username/developer-portfolio",
-      demo: ""
+      "title": "Developer Portfolio (this site)",
+      "description": "This portfolio itself — a responsive, single-page site built with vanilla HTML, CSS and JavaScript, with a custom admin panel for editing content without touching code.",
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "github": "",
+      "demo": ""
+    },
+    {
+      "title": "TechShop",
+      "description": "A web application for managing a tech shop database with full CRUD functionality for products, stock, and orders.",
+      "tech": [
+        "PHP",
+        "MySQL",
+        "CSS",
+        "JavaScript"
+      ],
+      "github": "https://github.com/noelmerheb/TechShop",
+      "demo": ""
+    },
+    {
+      "title": "Lunea Lenses",
+      "description": "A web-based e-commerce platform for Lunea Lenses that allows users to browse, view, and purchase contact lenses.",
+      "tech": [
+        "PHP",
+        "MySQL",
+        "CSS",
+        "JS"
+      ],
+      "github": "https://github.com/noelmerheb/Lunea-Lenses",
+      "demo": "https://lunea-lenses.com"
+    },
+    {
+      "title": "Satellite Merheb",
+      "description": "A platform for Satellite Merheb that manages customer subscriptions, tracks outstanding dues, and generates printable payment receipts.",
+      "tech": [
+        "PHP",
+        "MySQL",
+        "CSS",
+        "JS"
+      ],
+      "github": "https://github.com/noelmerheb/Satellite-Merheb",
+      "demo": "https://satellitemerheb.infinityfreeapp.com"
     }
   ]
 };
@@ -177,7 +252,7 @@ function typeTerminal() {
     { type: "cmd", text: "stack --list" },
     { type: "out", text: "HTML · CSS · JavaScript · PHP · MySQL · Git" },
     { type: "cmd", text: "status" },
-    { type: "out", text: "Open to ROLES IN THE CS INDUSTRY &amp;" }
+    { type: "out", text: "Open to internships &amp; entry-level roles" }
   ];
 
   body.innerHTML = "";

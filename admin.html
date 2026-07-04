@@ -33,6 +33,10 @@
         <button type="submit" class="btn btn-primary btn-block">Log In</button>
         <p class="login-error" id="loginError"></p>
       </form>
+      <div class="login-hint">
+        Default demo credentials: <strong>admin</strong> / <strong>admin123</strong><br>
+        Change these in admin.js (ADMIN_USER / ADMIN_PASS) before you publish this site.
+      </div>
     </div>
   </div>
 </div>
@@ -52,6 +56,7 @@
       <button class="admin-nav-btn active" data-panel="panel-text">✎ Site Text</button>
       <button class="admin-nav-btn" data-panel="panel-skills">▤ Skills</button>
       <button class="admin-nav-btn" data-panel="panel-projects">▣ Projects</button>
+      <button class="admin-nav-btn" data-panel="panel-export">⬆ Publish / Export</button>
       <button class="admin-nav-btn" data-panel="panel-danger">⚠ Reset Data</button>
     </nav>
 
@@ -133,6 +138,38 @@
           <button class="btn btn-primary btn-small" id="addProjectBtn">+ Add Project</button>
         </div>
         <div id="projectsList"></div>
+      </section>
+
+      <!-- ---------- EXPORT / PUBLISH ---------- -->
+      <section class="admin-panel" id="panel-export">
+        <div class="panel-head">
+          <div>
+            <h2>Publish / Export</h2>
+            <p>Make your edits permanent so they show up when you upload to GitHub.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">
+            Everything you edit here is saved only in <em>this browser</em>. To make it show up on your
+            live site, copy the code block below and paste it over the <code>DEFAULT_DATA</code> object
+            near the top of <strong>both</strong> <code>script.js</code> and <code>admin.js</code> in your
+            project folder — then commit and push to GitHub again.
+          </p>
+          <ol style="color:var(--text-muted); font-size:0.88rem; margin:0 0 20px 18px; line-height:1.9;">
+            <li>Click <strong>Copy Code</strong> below.</li>
+            <li>Open <code>script.js</code> in your code editor.</li>
+            <li>Select the whole <code>const DEFAULT_DATA = { ... };</code> block and replace it with what you copied.</li>
+            <li>Do the same in <code>admin.js</code> (it has its own copy of <code>DEFAULT_DATA</code>).</li>
+            <li>Save, commit, and push to GitHub. Your live site will now start with these values for every visitor.</li>
+          </ol>
+          <div class="save-row" style="margin-bottom:14px;">
+            <button class="btn btn-primary btn-small" id="copyExportBtn">Copy Code</button>
+            <button class="btn btn-ghost btn-small" id="downloadExportBtn">Download as .txt</button>
+            <span class="save-msg" id="exportCopyMsg">✓ Copied</span>
+          </div>
+          <textarea id="exportOutput" readonly style="width:100%; min-height:320px; background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; color:var(--text); font-family:var(--font-mono); font-size:0.78rem; line-height:1.6;"></textarea>
+        </div>
       </section>
 
       <!-- ---------- RESET ---------- -->
